@@ -1,21 +1,12 @@
 import Image from 'next/image';
+import HeroSlider from '@/components/HeroSlider';
 
 export default function Home() {
   return (
     <>
       {/* Hero Section */}
       <section style={{ position: 'relative', height: '100vh', minHeight: '600px', display: 'flex', alignItems: 'center', paddingTop: '80px' }}>
-        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1 }}>
-          <Image 
-            src="/hero_new.png" 
-            alt="DC Structural Steel Framework" 
-            fill 
-            style={{ objectFit: 'cover' }} 
-            priority
-          />
-          {/* Overlay to ensure text readability while keeping it bright */}
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%)' }}></div>
-        </div>
+        <HeroSlider />
         
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div style={{ maxWidth: '800px' }}>
