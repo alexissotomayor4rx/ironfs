@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function Projects() {
   const images = Array.from({ length: 11 }, (_, i) => `http://ironfs.com/images/galleries/thumbs/gallery${i + 1}.png`);
@@ -23,11 +24,13 @@ export default function Projects() {
               style={{ position: 'relative', background: 'var(--color-surface)', cursor: 'pointer' }}
               onClick={() => setSelectedImage(src)}
             >
-              <img 
+              <Image 
                 src={src} 
                 alt={`Project ${index + 1}`}
-                style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s ease' }}
+                fill
+                style={{ objectFit: 'cover', transition: 'transform 0.5s ease' }}
                 className="hover-zoom"
+                sizes="(max-width: 768px) 100vw, 300px"
               />
             </div>
           ))}
@@ -70,10 +73,11 @@ export default function Projects() {
             >
               &times;
             </button>
-            <img 
+            <Image 
               src={selectedImage} 
               alt="Expanded view" 
-              style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', display: 'block' }} 
+              fill
+              style={{ objectFit: 'contain', display: 'block' }} 
             />
           </div>
         </div>

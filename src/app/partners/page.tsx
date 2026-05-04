@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 export default function Partners() {
   const partners = [
@@ -38,7 +39,8 @@ export default function Partners() {
                 background: '#FFFFFF',
                 borderRadius: '8px',
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                position: 'relative'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-5px)';
@@ -49,10 +51,12 @@ export default function Partners() {
                 e.currentTarget.style.boxShadow = 'none';
               }}
               >
-                <img 
+                <Image 
                   src={`http://ironfs.com/images/partners/${partner.image}`} 
                   alt={partner.name} 
-                  style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
+                  fill
+                  style={{ objectFit: 'contain', padding: '1rem' }}
+                  sizes="(max-width: 768px) 100vw, 200px"
                 />
               </div>
             ))}

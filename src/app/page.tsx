@@ -48,21 +48,21 @@ export default function Home() {
           <div className="hex-row" style={{ marginBottom: '-60px' }}>
             <div className="hex-wrapper">
               <div className="hex-inner">
-                <img src="/gallery_frame.png" alt="Structural Steel Fabrication" className="hex-bg" />
+                <Image src="/gallery_frame.png" alt="Structural Steel Fabrication" fill className="hex-bg" style={{objectFit: 'cover'}} />
                 <div className="hex-overlay"></div>
                 <div className="hex-content">Structural Steel<br />Fabrication</div>
               </div>
             </div>
             <div className="hex-wrapper">
               <div className="hex-inner">
-                <img src="/gallery_stairs.png" alt="Engineering & Detailing" className="hex-bg" />
+                <Image src="/gallery_stairs.png" alt="Engineering & Detailing" fill className="hex-bg" style={{objectFit: 'cover'}} />
                 <div className="hex-overlay"></div>
                 <div className="hex-content">Engineering &<br />Detailing</div>
               </div>
             </div>
             <div className="hex-wrapper">
               <div className="hex-inner">
-                <img src="/hero_new.png" alt="Steel Erection" className="hex-bg" />
+                <Image src="/hero_new.png" alt="Steel Erection" fill className="hex-bg" style={{objectFit: 'cover'}} />
                 <div className="hex-overlay"></div>
                 <div className="hex-content">Steel<br />Erection</div>
               </div>
@@ -73,14 +73,14 @@ export default function Home() {
           <div className="hex-row">
             <div className="hex-wrapper">
               <div className="hex-inner">
-                <img src="/gallery_rails.png" alt="Prefabricated Stairs & Rails" className="hex-bg" />
+                <Image src="/gallery_rails.png" alt="Prefabricated Stairs & Rails" fill className="hex-bg" style={{objectFit: 'cover'}} />
                 <div className="hex-overlay"></div>
                 <div className="hex-content">Stairs, Rails &<br />Structures</div>
               </div>
             </div>
             <div className="hex-wrapper">
               <div className="hex-inner">
-                <img src="http://ironfs.com/images/galleries/thumbs/gallery5.png" alt="Project Management" className="hex-bg" />
+                <Image src="http://ironfs.com/images/galleries/thumbs/gallery5.png" alt="Project Management" fill className="hex-bg" style={{objectFit: 'cover'}} />
                 <div className="hex-overlay"></div>
                 <div className="hex-content">Project<br />Management</div>
               </div>
