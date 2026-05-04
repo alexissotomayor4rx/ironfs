@@ -4,7 +4,7 @@ export default function Careers() {
       <div className="container section">
         <h1 className="section-title">Join Our <span>Team</span></h1>
         
-        <div style={{ background: '#FFFFFF', padding: '3rem', border: '1px solid var(--color-border)', borderRadius: '4px', boxShadow: '0 4px 10px rgba(0,0,0,0.05)' }}>
+        <div style={{ background: '#FFFFFF', padding: 'clamp(1.5rem, 5vw, 3rem)', border: '1px solid var(--color-border)', borderRadius: '4px', boxShadow: '0 4px 10px rgba(0,0,0,0.05)' }}>
           
           <div style={{ marginBottom: '3rem', paddingBottom: '2rem', borderBottom: '1px solid var(--color-border)' }}>
             <p style={{ color: 'var(--color-charcoal)', fontSize: '1.1rem', marginBottom: '1.5rem' }}>

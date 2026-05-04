@@ -25,7 +25,7 @@ export default function Partners() {
       <div className="container section">
         <h1 className="section-title">Our <span>Partners</span></h1>
         
-        <div style={{ background: '#FFFFFF', padding: '4rem', border: '1px solid var(--color-border)', borderRadius: '4px', boxShadow: '0 4px 10px rgba(0,0,0,0.05)' }}>
+        <div style={{ background: '#FFFFFF', padding: 'clamp(1.5rem, 5vw, 4rem)', border: '1px solid var(--color-border)', borderRadius: '4px', boxShadow: '0 4px 10px rgba(0,0,0,0.05)' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '4rem', alignItems: 'center', justifyItems: 'center' }}>
             {partners.map((partner, index) => (
               <div key={index} style={{

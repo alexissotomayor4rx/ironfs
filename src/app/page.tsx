@@ -24,14 +24,14 @@ export default function Home() {
               <span style={{ fontWeight: 700, color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.875rem' }}>Baltimore, MD</span>
             </div>
             
-            <h1 style={{ fontSize: 'clamp(3.5rem, 8vw, 5.5rem)', lineHeight: 1.05, marginBottom: '2rem', color: 'var(--color-charcoal)' }}>
+            <h1 style={{ fontSize: 'clamp(2.5rem, 8vw, 5.5rem)', lineHeight: 1.05, marginBottom: '2rem', color: 'var(--color-charcoal)' }}>
               PRECISION IN <br />
               <span style={{ color: 'var(--color-steel-blue)' }}>EVERY BEAM.</span><br />
               QUALITY IN<br />
               <span style={{ color: 'var(--color-primary)' }}>EVERY WELD.</span>
             </h1>
             
-            <p style={{ fontSize: '1.25rem', color: 'var(--color-text-muted)', marginBottom: '3rem', maxWidth: '600px', fontWeight: 400 }}>
+            <p style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)', color: 'var(--color-text-muted)', marginBottom: '3rem', maxWidth: '600px', fontWeight: 400 }}>
               Delivering high-end structural steel and iron fabrication for commercial and industrial projects across the Mid-Atlantic.
             </p>
             
@@ -171,8 +171,8 @@ export default function Home() {
 
       {/* CTA Section */}
       <section id="quote" className="section container">
-        <div style={{ background: 'var(--color-steel-blue)', padding: '6rem 4rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', color: '#FFF' }}>
-          <h2 style={{ fontSize: '3rem', color: '#FFF', marginBottom: '1.5rem' }}>Ready to Build?</h2>
+        <div style={{ background: 'var(--color-steel-blue)', padding: 'clamp(3rem, 10vw, 6rem) clamp(1.5rem, 5vw, 4rem)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', color: '#FFF' }}>
+          <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', color: '#FFF', marginBottom: '1.5rem' }}>Ready to Build?</h2>
           <p style={{ fontSize: '1.125rem', color: 'rgba(255,255,255,0.8)', maxWidth: '600px', marginBottom: '3rem' }}>
             Submit your schematics or talk to one of our engineers today. We provide comprehensive quotes within 48 hours.
           </p>

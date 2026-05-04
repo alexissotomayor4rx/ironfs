@@ -10,7 +10,7 @@ export default function Contact() {
         </p>
         
         <div className="grid-12" style={{ gap: '4rem' }}>
-          <div style={{ gridColumn: 'span 5' }}>
+          <div className="col-5">
              <div style={{ position: 'relative', height: '300px', width: '100%', border: '1px solid var(--color-border)' }}>
                 {/* Image of keyboard as seen in screenshot, but we'll use a placeholder from gallery or abstract */}
                 <Image 
@@ -22,7 +22,7 @@ export default function Contact() {
              </div>
           </div>
           
-          <div style={{ gridColumn: 'span 7', display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
+          <div className="col-7" style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
              
              <div>
                 <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem', color: 'var(--color-steel-blue)' }}>Quote Request</h3>

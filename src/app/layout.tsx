@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Navbar from "@/components/Navbar";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -18,50 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body suppressHydrationWarning>
-        <nav style={{ 
-          padding: '1.25rem 0', 
-          position: 'fixed', 
-          width: '100%', 
-          top: 0, 
-          zIndex: 100, 
-          background: 'rgba(255, 255, 255, 0.85)', 
-          backdropFilter: 'blur(12px)',
-          WebkitBackdropFilter: 'blur(12px)',
-          borderBottom: '1px solid var(--color-border)' 
-        }}>
-          <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <Link href="/">
-              <img src="/logo.png" alt="Iron Fabrication Services, Inc." style={{ height: '50px', objectFit: 'contain', objectPosition: 'left center' }} />
-            </Link>
-
-            <div className="nav-links" style={{ display: 'flex', gap: '2.5rem', fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-steel-blue)' }}>
-              <Link href="/">Home</Link>
-              
-              <div className="dropdown">
-                <Link href="/about" style={{ padding: '20px 0' }}>About Us</Link>
-                <div className="dropdown-content">
-                  <Link href="/about">Overview</Link>
-                  <Link href="/partners">Partners</Link>
-                  <Link href="/careers">Careers</Link>
-                </div>
-              </div>
-
-              <Link href="/projects">Projects</Link>
-              <Link href="/map-directions">Map & Directions</Link>
-              <Link href="/contact">Contact</Link>
-            </div>
-            
-            <div className="nav-links">
-              <Link href="/contact" className="btn btn-primary" style={{ padding: '0.75rem 1.5rem', fontSize: '0.9rem' }}>Request a Quote</Link>
-            </div>
-
-            <button className="mobile-menu-btn" aria-label="Menu">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-          </div>
-        </nav>
+        <Navbar />
         
         <main>{children}</main>
         
