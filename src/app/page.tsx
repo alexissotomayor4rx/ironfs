@@ -440,8 +440,6 @@ export default function Home() {
                 </h3>
               </div>
             </div>
-              </div>
-            </div>
 
             {/* Item 4 (Dummy for masonry effect) */}
             <div
