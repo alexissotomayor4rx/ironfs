@@ -5,6 +5,7 @@ import Image from "next/image";
 import "./heroslider.css";
 
 const images = [
+  "/images/project_gallery/224011-Templeton4.jpeg",
   "/images/project_gallery/224009-1250 Maryland Ave-2.jpeg",
   "/images/project_gallery/223011-Crystal Metro Entrance.jpeg",
   "/images/project_gallery/224006-Inova.jpeg",

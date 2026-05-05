@@ -8,8 +8,8 @@ export default function Home() {
       <section
         style={{
           position: "relative",
-          height: "100vh",
-          minHeight: "600px",
+          height: "115vh",
+          minHeight: "750px",
           display: "flex",
           alignItems: "center",
           paddingTop: "80px",
@@ -30,13 +30,11 @@ export default function Home() {
               }}
             >
               Precision in <br />
-              <span style={{ color: "var(--color-steel-blue)" }}>
-                every Beam.
-              </span>
+              every <span style={{ color: "#7B0D1E" }}>Beam.</span>
               <br />
               Quality in
               <br />
-              <span style={{ color: "var(--color-primary)" }}>every Weld.</span>
+              every <span style={{ color: "#C0152A" }}>Weld.</span>
             </h1>
 
             <p

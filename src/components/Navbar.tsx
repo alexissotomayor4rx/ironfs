@@ -24,8 +24,10 @@ export default function Navbar() {
       borderBottom: '1px solid var(--color-border)' 
     }}>
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <Link href="/">
+        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <img src="/images/logo/IronFab_Logo.png" alt="Iron Fabrication Services, LLC." style={{ height: '52px', objectFit: 'contain', objectPosition: 'left center' }} />
+          <span style={{ width: '1px', height: '36px', background: 'var(--color-border)', display: 'inline-block' }} />
+          <img src="/images/logo/Iron Fab INC Logo.png" alt="Iron Fabrication Services, Inc." style={{ height: '44px', objectFit: 'contain', objectPosition: 'left center' }} />
         </Link>
 
         <div className={`nav-links-container ${isOpen ? 'open' : ''}`}>

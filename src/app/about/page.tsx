@@ -41,10 +41,22 @@ export default function About() {
             <PanoramaSlider
               aspectRatio="16/7"
               images={[
-                { src: "/images/project_gallery/224009-1250 Maryland Ave-2.jpeg", alt: "1250 Maryland Ave view 1" },
-                { src: "/images/project_gallery/224009-1250 Maryland Ave-1.jpeg", alt: "1250 Maryland Ave view 2" },
-                { src: "/images/project_gallery/224009-1250 Maryland Ave.jpeg",   alt: "1250 Maryland Ave view 3" },
-                { src: "/images/project_gallery/B4DD675F-05CF-4FB9-97D4-8098E75EAF0A.jpeg", alt: "Steel structure" },
+                {
+                  src: "/images/project_gallery/224009-1250 Maryland Ave-2.jpeg",
+                  alt: "1250 Maryland Ave view 1",
+                },
+                {
+                  src: "/images/project_gallery/224009-1250 Maryland Ave-1.jpeg",
+                  alt: "1250 Maryland Ave view 2",
+                },
+                {
+                  src: "/images/project_gallery/224009-1250 Maryland Ave.jpeg",
+                  alt: "1250 Maryland Ave view 3",
+                },
+                {
+                  src: "/images/project_gallery/B4DD675F-05CF-4FB9-97D4-8098E75EAF0A.jpeg",
+                  alt: "Steel structure",
+                },
               ]}
             />
             {/* Bottom Row - 2 Verticals */}
@@ -64,11 +76,12 @@ export default function About() {
                   borderRadius: "12px",
                   overflow: "hidden",
                   boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
-                  transition: "all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+                  transition:
+                    "all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
                 }}
               >
                 <Image
-                  src="/images/224011_tempImage.jpeg"
+                  src="/images/project_gallery/224002-OMVHS.jpeg"
                   alt="Mission Vertical 1"
                   fill
                   style={{ objectFit: "cover" }}
@@ -81,11 +94,12 @@ export default function About() {
                   borderRadius: "12px",
                   overflow: "hidden",
                   boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
-                  transition: "all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+                  transition:
+                    "all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
                 }}
               >
                 <Image
-                  src="/images/225010_Malcoml.jpeg"
+                  src="/images/project_gallery/222013-North Moore3.jpeg"
                   alt="Mission Vertical 2"
                   fill
                   style={{ objectFit: "cover" }}
