@@ -5,10 +5,12 @@ import Image from "next/image";
 import "./heroslider.css";
 
 const images = [
-  "/images/224010-mX.JPG",
-  "/images/224009-MD1.jpeg",
-  "/images/223011.jpeg",
-  "/images/224011_tempImage.jpeg"
+  "/images/project_gallery/224009-1250 Maryland Ave-2.jpeg",
+  "/images/project_gallery/223011-Crystal Metro Entrance.jpeg",
+  "/images/project_gallery/224006-Inova.jpeg",
+  "/images/project_gallery/222013-North Moore1.jpeg",
+  "/images/project_gallery/224001-Mars Arcadia.jpeg",
+  "/images/project_gallery/224004-U-Market2.jpeg",
 ];
 
 export default function HeroSlider() {
