@@ -25,7 +25,7 @@ export default function Navbar() {
     }}>
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <Link href="/">
-          <img src="/logo.png" alt="Iron Fabrication Services, Inc." style={{ height: '50px', objectFit: 'contain', objectPosition: 'left center' }} />
+          <img src="/images/logo/IronFab_Logo.png" alt="Iron Fabrication Services, LLC." style={{ height: '52px', objectFit: 'contain', objectPosition: 'left center' }} />
         </Link>
 
         <div className={`nav-links-container ${isOpen ? 'open' : ''}`}>

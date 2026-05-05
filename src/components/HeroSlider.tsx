@@ -5,10 +5,10 @@ import Image from "next/image";
 import "./heroslider.css";
 
 const images = [
-  "/hero_new.png",
-  "/gallery_frame.png",
-  "/gallery_stairs.png",
-  "/gallery_rails.png"
+  "/images/224010-mX.JPG",
+  "/images/224009-MD1.jpeg",
+  "/images/223011.jpeg",
+  "/images/224011_tempImage.jpeg"
 ];
 
 export default function HeroSlider() {

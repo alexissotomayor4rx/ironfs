@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Iron Fabrication | Structural Steel",
   description: "High-end structural steel and iron fabrication based in Maryland.",
   icons: {
-    icon: '/logo.png',
+    icon: '/images/logo/IronFab_Logo.png',
   },
 };
 
@@ -26,8 +26,13 @@ export default function RootLayout({
         <footer style={{ background: 'var(--color-steel-blue)', padding: '5rem 0', color: '#FFF' }}>
           <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '3rem' }}>
             <div>
-              <div style={{ marginBottom: '1.5rem', background: '#FFF', padding: '10px', display: 'inline-block', borderRadius: '4px' }}>
-                <img src="/logo.png" alt="Iron Fabrication Services, Inc." style={{ height: '40px', objectFit: 'contain' }} />
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '1.5rem', alignItems: 'center' }}>
+                <div style={{ background: '#FFF', padding: '10px 14px', display: 'inline-block', borderRadius: '6px' }}>
+                  <img src="/images/logo/IronFab_Logo.png" alt="Iron Fabrication Services, LLC." style={{ height: '40px', objectFit: 'contain', display: 'block' }} />
+                </div>
+                <div style={{ background: '#FFF', padding: '10px 14px', display: 'inline-block', borderRadius: '6px' }}>
+                  <img src="/images/logo/Iron Fab INC Logo.png" alt="Iron Fabrication Services, Inc." style={{ height: '40px', objectFit: 'contain', display: 'block' }} />
+                </div>
               </div>
               <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '1rem', lineHeight: 1.8 }}>
                 Heavy-duty, tech-forward structural steel fabrication based in Baltimore, MD.

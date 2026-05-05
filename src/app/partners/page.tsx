@@ -3,22 +3,14 @@ import Image from "next/image";
 
 export default function Partners() {
   const partners = [
-    { name: "DAVIS", image: "Davis.png" },
-    { name: "CLARK CONSTRUCTION", image: "clark.png" },
-    { name: "Balfour Beatty", image: "Belfour.png" },
-    { name: "HENSEL PHELPS", image: "hp.png" },
-    { name: "MORIARTY", image: "jma.png" },
-    { name: "BOZZUTO", image: "bzzuto1.png" },
-    { name: "HITT", image: "hitt.png" },
-    { name: "FORRESTER", image: "forrester.png" },
-    { name: "GRUNLEY", image: "grunley.png" },
-    { name: "HARKINS BUILDERS", image: "harkins.png" },
-    { name: "McCullough", image: "mccullough.png" },
-    { name: "MCN BUILD", image: "mcn.png" },
-    { name: "MONARC", image: "monarc.png" },
-    { name: "PLAZA CONSTRUCTION", image: "plaza.png" },
-    { name: "SHAWMUT", image: "shawmut.png" },
-    { name: "winmar", image: "winmar.png" }
+    { name: "Bozzuto", image: "/images/Partners logos/Bozzuto logo.png" },
+    { name: "CBG", image: "/images/Partners logos/CBG-Logo.png" },
+    { name: "GCS-SIGAL", image: "/images/Partners logos/GCS-SIGAL-Logo.jpg" },
+    { name: "Grunley", image: "/images/Partners logos/Grunley-Logo.jpg" },
+    { name: "Iron Fab INC", image: "/images/Partners logos/Iron Fab INC Logo.png" },
+    { name: "NRP Group", image: "/images/Partners logos/NRP Group-Logo.png" },
+    { name: "SIE", image: "/images/Partners logos/SIE cropped Logo.png" },
+    { name: "SmootDC", image: "/images/Partners logos/SmootDC-Logo.png" }
   ];
 
   return (
@@ -52,7 +44,7 @@ export default function Partners() {
               }}
               >
                 <Image 
-                  src={`http://ironfs.com/images/partners/${partner.image}`} 
+                  src={partner.image} 
                   alt={partner.name} 
                   fill
                   style={{ objectFit: 'contain', padding: '1rem' }}

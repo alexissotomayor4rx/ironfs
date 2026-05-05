@@ -99,7 +99,8 @@ a:hover {
 }
 
 .btn-primary:hover {
-  background-color: #E04E0C;
+  background-color: #722F37; /* Wine Red */
+  color: #FFF;
 }
 
 .btn-secondary {
@@ -109,6 +110,7 @@ a:hover {
 
 .btn-secondary:hover {
   background-color: var(--color-charcoal);
+  color: #FFF;
 }
 
 .btn-outline {
