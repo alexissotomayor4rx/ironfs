@@ -50,7 +50,7 @@ export default function HeroSlider() {
           </div>
         );
       })}
-      {/* Overlay to ensure text readability on the left */}
+      {/* Gradient overlay for text readability */}
       <div className="hero-overlay"></div>
     </div>
   );

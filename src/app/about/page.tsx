@@ -449,7 +449,8 @@ export default function About() {
                 }}
               >
                 Solidify our footprint as the premier structural steel partner
-                in the Mid-Atlantic by scaling our engineering capabilities.
+                in the Maryland, Virginia, D.C area by scaling our engineering
+                capabilities.
               </p>
             </div>
           </div>
@@ -584,7 +585,7 @@ export default function About() {
               style={{
                 background: "var(--color-surface)",
                 padding: "2rem",
-                borderLeft: "4px solid var(--color-steel-blue)",
+                borderLeft: "4px solid var(--color-primary)",
                 borderRadius: "0 8px 8px 0",
                 transition: "transform 0.3s ease, box-shadow 0.3s ease",
               }}
@@ -592,7 +593,7 @@ export default function About() {
             >
               <h3
                 style={{
-                  color: "var(--color-primary)",
+                  color: "var(--color-steel-blue)",
                   fontSize: "1.25rem",
                   marginBottom: "1rem",
                 }}
@@ -616,7 +617,7 @@ export default function About() {
               style={{
                 background: "var(--color-surface)",
                 padding: "2rem",
-                borderLeft: "4px solid var(--color-steel-blue)",
+                borderLeft: "4px solid var(--color-primary)",
                 borderRadius: "0 8px 8px 0",
                 transition: "transform 0.3s ease, box-shadow 0.3s ease",
               }}
@@ -624,7 +625,7 @@ export default function About() {
             >
               <h3
                 style={{
-                  color: "var(--color-primary)",
+                  color: "var(--color-steel-blue)",
                   fontSize: "1.25rem",
                   marginBottom: "1rem",
                 }}
@@ -648,7 +649,7 @@ export default function About() {
               style={{
                 background: "var(--color-surface)",
                 padding: "2rem",
-                borderLeft: "4px solid var(--color-steel-blue)",
+                borderLeft: "4px solid var(--color-primary)",
                 borderRadius: "0 8px 8px 0",
                 transition: "transform 0.3s ease, box-shadow 0.3s ease",
               }}
@@ -656,7 +657,7 @@ export default function About() {
             >
               <h3
                 style={{
-                  color: "var(--color-primary)",
+                  color: "var(--color-steel-blue)",
                   fontSize: "1.25rem",
                   marginBottom: "1rem",
                 }}

@@ -2,14 +2,14 @@
 
 :root {
   --color-bg: #FFFFFF;
-  --color-surface: #F4F6F9;
-  --color-charcoal: #2A2E33;
+  --color-surface: #EFF2F8;
+  --color-charcoal: #1E2D4F; /* Dark Navy — headings, strong text */
   --color-steel-blue: #1E2D4F; /* Dark Navy from logo */
   --color-primary: #3152A3; /* Royal Blue from logo */
-  --color-primary-light: #90A6D6; /* Light Blue from logo */
-  --color-text-main: #333333;
-  --color-text-muted: #6C7A89;
-  --color-border: #E2E8F0;
+  --color-primary-light: #7B93CC; /* Mid blue accent */
+  --color-text-main: #2A3550; /* Dark navy-gray for body text */
+  --color-text-muted: #6B7A96; /* Medium blue-gray muted */
+  --color-border: #D4DAE8; /* Soft blue-gray border */
   --color-glass: rgba(255, 255, 255, 0.95);
   
   --font-sans: 'Inter', sans-serif;
@@ -30,7 +30,7 @@ html, body {
 }
 
 body {
-  background: linear-gradient(180deg, #FFFFFF 0%, #C4D0E6 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #E8EDF6 100%);
   background-attachment: fixed;
   color: var(--color-text-main);
   font-family: var(--font-sans);
@@ -99,7 +99,7 @@ a:hover {
 }
 
 .btn-primary:hover {
-  background-color: #722F37; /* Wine Red */
+  background-color: #A3B3F1;
   color: #FFF;
 }
 

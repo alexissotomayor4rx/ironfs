@@ -8,6 +8,7 @@ export default function Partners() {
     { name: "GCS-SIGAL", image: "/images/Partners logos/GCS-SIGAL-Logo.jpg" },
     { name: "Grunley", image: "/images/Partners logos/Grunley-Logo.jpg" },
     { name: "NRP Group", image: "/images/Partners logos/NRP Group-Logo.png" },
+    { name: "Iron Fabrication Services, LLC", image: "/images/logo/Logo_fab_remove.PNG" },
     { name: "SIE", image: "/images/Partners logos/SIE cropped Logo.png" },
     { name: "SmootDC", image: "/images/Partners logos/SmootDC-Logo.png" },
   ];

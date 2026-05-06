@@ -1,5 +1,6 @@
 import Image from "next/image";
 import HeroSlider from "@/components/HeroSlider";
+import HeroSwoosh from "@/components/HeroSwoosh";
 
 export default function Home() {
   return (
@@ -16,8 +17,10 @@ export default function Home() {
           overflow: "hidden",
         }}
       >
-
         <HeroSlider />
+
+        {/* Swoosh SVG — logo arcs drawn over the hero photo, below text */}
+        <HeroSwoosh />
 
         <div className="container" style={{ position: "relative", zIndex: 1 }}>
           <div style={{ maxWidth: "800px" }}>
@@ -30,11 +33,11 @@ export default function Home() {
               }}
             >
               Precision in <br />
-              every <span style={{ color: "#7B0D1E" }}>Beam.</span>
+              every <span style={{ color: "#1346B3" }}>Beam.</span>
               <br />
               Quality in
               <br />
-              every <span style={{ color: "#C0152A" }}>Weld.</span>
+              every <span style={{ color: "#A2B6F6" }}>Weld.</span>
             </h1>
 
             <p

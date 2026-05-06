@@ -1,0 +1,357 @@
+/* ============================================================
+   PAGE LOADER — Iron Fabrication Brand Transition
+   Philosophy:
+     phase idle   → black screen, nothing visible
+     phase swoosh → the swoosh arc draws itself L→R (1s)
+     phase logo   → logo + tagline fade in (0.6s)
+     phase build  → weld glow ignites, sparks fly (1.1s)
+     phase exit   → steel curtains part top/bottom (0.9s)
+     phase done   → component unmounts
+   ============================================================ */
+
+/* ── Overlay shell ─────────────────────────────────────────── */
+.pl-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #0a0d14;
+
+  /* Exit: fade out the overlay itself after curtains open */
+  transition: opacity 0.5s ease 0.4s;
+}
+
+.pl-phase-exit   { opacity: 1; }
+.pl-phase-done   { opacity: 0; pointer-events: none; }
+
+/* ── Background panels ─────────────────────────────────────── */
+.pl-bg-panel {
+  position: absolute;
+  inset: 0;
+  transition: opacity 1.2s ease;
+}
+
+/* Steel: dark navy grid texture feel */
+.pl-bg-steel {
+  background:
+    linear-gradient(135deg, #0a0d14 0%, #1E2D4F 60%, #0a0d14 100%);
+  opacity: 1;
+}
+
+/* Weld: orange-red warmth that ignites during "build" phase */
+.pl-bg-weld {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 60%,
+      rgba(192, 21, 42, 0.35) 0%,
+      rgba(255, 107, 53, 0.18) 45%,
+      transparent 75%);
+  opacity: 0;
+  transition: opacity 1.4s ease;
+}
+
+.pl-phase-build .pl-bg-weld,
+.pl-phase-exit  .pl-bg-weld { opacity: 1; }
+
+/* ── Engineering grid lines ────────────────────────────────── */
+.pl-grid-lines {
+  position: absolute;
+  inset: -40px;
+  pointer-events: none;
+}
+
+.pl-grid-line {
+  position: absolute;
+  background: rgba(49, 82, 163, 0.12);
+  transition: opacity 0.6s ease;
+}
+
+/* Alternating horizontal / vertical lines */
+.pl-grid-line:nth-child(odd)  { width: 100%; height: 1px; top: calc(var(--gi) * 18%); }
+.pl-grid-line:nth-child(even) { height: 100%; width: 1px; left: calc(var(--gi) * 18%); }
+
+.pl-phase-idle .pl-grid-line   { opacity: 0; }
+.pl-phase-swoosh .pl-grid-line { opacity: 1; }
+.pl-phase-build .pl-grid-line  { opacity: 0.05; }
+.pl-phase-exit  .pl-grid-line  { opacity: 0; }
+
+/* ── SVG Swoosh ────────────────────────────────────────────── */
+.pl-swoosh-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Main swoosh path — stroke-dasharray trick to draw it */
+.pl-swoosh-path {
+  stroke-dasharray: 1800;
+  stroke-dashoffset: 1800;
+  transition: stroke-dashoffset 0s;   /* reset – no draw yet */
+  opacity: 0;
+}
+
+.pl-phase-swoosh .pl-swoosh-path,
+.pl-phase-logo   .pl-swoosh-path,
+.pl-phase-build  .pl-swoosh-path {
+  animation: pl-draw-swoosh 0.85s cubic-bezier(0.22, 0.8, 0.4, 1.0) 0.05s both;
+  opacity: 1;
+}
+
+.pl-phase-exit .pl-swoosh-path { opacity: 0; transition: opacity 0.4s ease; }
+
+@keyframes pl-draw-swoosh {
+  from { stroke-dashoffset: 1800; }
+  to   { stroke-dashoffset: 0; }
+}
+
+/* Echo strokes */
+.pl-swoosh-echo {
+  stroke-dasharray: 1800;
+  stroke-dashoffset: 1800;
+  opacity: 0;
+}
+
+.pl-phase-swoosh .pl-echo-1,
+.pl-phase-logo   .pl-echo-1,
+.pl-phase-build  .pl-echo-1 {
+  animation: pl-draw-swoosh 1.0s cubic-bezier(0.22, 0.8, 0.4, 1.0) 0.15s both;
+  opacity: 1;
+}
+
+.pl-phase-swoosh .pl-echo-2,
+.pl-phase-logo   .pl-echo-2,
+.pl-phase-build  .pl-echo-2 {
+  animation: pl-draw-swoosh 1.2s cubic-bezier(0.22, 0.8, 0.4, 1.0) 0.25s both;
+  opacity: 1;
+}
+
+.pl-phase-exit .pl-swoosh-echo { opacity: 0; transition: opacity 0.3s ease; }
+
+/* ── Center stage ──────────────────────────────────────────── */
+.pl-center {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 2rem 3rem;
+}
+
+/* ── Logo lockup ───────────────────────────────────────────── */
+.pl-logo-lockup {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0s, transform 0s; /* reset */
+}
+
+.pl-phase-logo  .pl-logo-lockup,
+.pl-phase-build .pl-logo-lockup,
+.pl-phase-exit  .pl-logo-lockup {
+  animation: pl-rise-in 0.55s cubic-bezier(0.3, 0.9, 0.4, 1.0) 0.05s both;
+}
+
+@keyframes pl-rise-in {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.pl-logo-wrap {
+  background: rgba(255, 255, 255, 0.96);
+  padding: 10px 16px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Phase build: subtle white glow pulse */
+  transition: box-shadow 0.6s ease;
+}
+
+.pl-phase-build .pl-logo-wrap {
+  box-shadow:
+    0 0 20px rgba(255, 107, 53, 0.45),
+    0 0 60px rgba(192, 21, 42, 0.25);
+}
+
+.pl-logo-img {
+  height: 46px;
+  object-fit: contain;
+  display: block;
+}
+
+.pl-logo-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* ── Weld line (animated spark seam) ──────────────────────── */
+.pl-weld-line {
+  position: relative;
+  width: 280px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(49,82,163,0.5), rgba(192,21,42,0.7), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.pl-phase-logo  .pl-weld-line,
+.pl-phase-build .pl-weld-line,
+.pl-phase-exit  .pl-weld-line { opacity: 1; }
+
+/* Rolling weld dot */
+.pl-weld-dot {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #FF6B35;
+  box-shadow: 0 0 12px #FF6B35, 0 0 30px rgba(255,107,53,0.6);
+  opacity: 0;
+}
+
+.pl-phase-build .pl-weld-dot,
+.pl-phase-exit  .pl-weld-dot {
+  animation: pl-weld-travel 1.2s ease-in-out 0.1s both;
+}
+
+@keyframes pl-weld-travel {
+  0%   { left: 0;    opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { left: calc(100% - 8px); opacity: 0; }
+}
+
+/* ── Tagline ───────────────────────────────────────────────── */
+.pl-tagline {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.75rem, 2vw, 0.95rem);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease 0.3s;
+}
+
+.pl-tagline em {
+  font-style: normal;
+  color: #C0152A;
+  font-weight: 700;
+}
+
+.pl-phase-logo  .pl-tagline,
+.pl-phase-build .pl-tagline,
+.pl-phase-exit  .pl-tagline { opacity: 1; }
+
+/* ── Spark particles ───────────────────────────────────────── */
+.pl-sparks {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.pl-spark {
+  --i: 0;
+  position: absolute;
+  bottom: 52%;
+  left: 50%;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #FF6B35;
+  opacity: 0;
+}
+
+.pl-phase-build .pl-spark,
+.pl-phase-exit  .pl-spark {
+  animation: pl-spark-fly
+    calc(0.6s + (var(--i) * 0.07s))
+    cubic-bezier(0.2, 0.8, 0.6, 1.0)
+    calc(var(--i) * 0.06s)
+    both
+    infinite;
+}
+
+@keyframes pl-spark-fly {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(1);
+  }
+  10% { opacity: 1; }
+  100% {
+    opacity: 0;
+    transform:
+      translate(
+        calc(cos(calc(var(--i) * 20deg)) * 120px),
+        calc(-80px - (var(--i) * 6px))
+      )
+      scale(0.2);
+  }
+}
+
+/* Vary colors across sparks */
+.pl-spark:nth-child(3n)   { background: #FFB830; box-shadow: 0 0 6px #FFB830; }
+.pl-spark:nth-child(3n+1) { background: #FF6B35; box-shadow: 0 0 6px #FF6B35; }
+.pl-spark:nth-child(3n+2) { background: #ffffff; box-shadow: 0 0 6px #fff; width: 2px; height: 2px; }
+
+/* ── Exit curtains — steel plate split ─────────────────────── */
+.pl-curtain {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 51%; /* slight overlap to avoid gap */
+  background: #0a0d14;
+  z-index: 5;
+  transition: transform 0s; /* default: in place */
+}
+
+.pl-curtain-top    { top: 0;   transform: translateY(0); }
+.pl-curtain-bottom { bottom: 0; transform: translateY(0); }
+
+/* In idle / swoosh / logo / build: curtains are closed (covering nothing since they stack behind) */
+/* In exit: curtains split apart */
+.pl-phase-exit .pl-curtain-top {
+  animation: pl-curtain-open-top 0.9s cubic-bezier(0.76, 0, 0.24, 1) 0s both;
+}
+.pl-phase-exit .pl-curtain-bottom {
+  animation: pl-curtain-open-bottom 0.9s cubic-bezier(0.76, 0, 0.24, 1) 0s both;
+}
+
+@keyframes pl-curtain-open-top {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-100%); }
+}
+
+@keyframes pl-curtain-open-bottom {
+  from { transform: translateY(0); }
+  to   { transform: translateY(100%); }
+}
+
+/* Hide curtains in non-exit phases so they don't obscure the logo */
+.pl-phase-idle   .pl-curtain,
+.pl-phase-swoosh .pl-curtain,
+.pl-phase-logo   .pl-curtain,
+.pl-phase-build  .pl-curtain {
+  display: none;
+}
+
+/* ── Responsive tweaks ─────────────────────────────────────── */
+@media (max-width: 600px) {
+  .pl-logo-img       { height: 34px; }
+  .pl-logo-lockup    { gap: 1rem; }
+  .pl-weld-line      { width: 200px; }
+  .pl-center         { padding: 1.5rem; }
+}
