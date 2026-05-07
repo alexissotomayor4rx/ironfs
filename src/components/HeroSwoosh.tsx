@@ -33,83 +33,80 @@ export default function HeroSwoosh() {
 
         {/* Gradient: opaque in the center, fades at both tips */}
         <linearGradient id="hs-grad-fill" x1="100%" y1="0%" x2="0%" y2="0%">
-          <stop offset="0%"   stopColor="#1E2D4F" stopOpacity="0.0" />
-          <stop offset="15%"  stopColor="#1E2D4F" stopOpacity="0.72" />
-          <stop offset="55%"  stopColor="#1E2D4F" stopOpacity="0.78" />
-          <stop offset="90%"  stopColor="#3152A3" stopOpacity="0.5" />
+          <stop offset="0%" stopColor="#1E2D4F" stopOpacity="0.0" />
+          <stop offset="15%" stopColor="#1E2D4F" stopOpacity="0.8" />
+          <stop offset="55%" stopColor="#1E2D4F" stopOpacity="0.85" />
+          <stop offset="90%" stopColor="#3152A3" stopOpacity="0.6" />
           <stop offset="100%" stopColor="#3152A3" stopOpacity="0.0" />
         </linearGradient>
 
         <linearGradient id="hs-grad-mid" x1="100%" y1="0%" x2="0%" y2="0%">
-          <stop offset="0%"   stopColor="#3152A3" stopOpacity="0.0" />
-          <stop offset="12%"  stopColor="#3152A3" stopOpacity="0.55" />
-          <stop offset="80%"  stopColor="#6B84C2" stopOpacity="0.4" />
+          <stop offset="0%" stopColor="#3152A3" stopOpacity="0.0" />
+          <stop offset="12%" stopColor="#3152A3" stopOpacity="0.75" />
+          <stop offset="80%" stopColor="#6B84C2" stopOpacity="0.6" />
           <stop offset="100%" stopColor="#6B84C2" stopOpacity="0.0" />
         </linearGradient>
 
         <linearGradient id="hs-grad-thin" x1="100%" y1="0%" x2="0%" y2="0%">
-          <stop offset="0%"   stopColor="#7B93CC" stopOpacity="0.0" />
-          <stop offset="15%"  stopColor="#7B93CC" stopOpacity="0.4" />
-          <stop offset="80%"  stopColor="#A3B3F1" stopOpacity="0.3" />
+          <stop offset="0%" stopColor="#7B93CC" stopOpacity="0.0" />
+          <stop offset="15%" stopColor="#7B93CC" stopOpacity="0.6" />
+          <stop offset="80%" stopColor="#A3B3F1" stopOpacity="0.5" />
           <stop offset="100%" stopColor="#A3B3F1" stopOpacity="0.0" />
         </linearGradient>
       </defs>
 
-      {/*
-       * ── 1. MAIN CRESCENT ─────────────────────────────────────
-       *
-       * Positioned on the RIGHT side of the hero.
-       * Right tip starts off-screen at upper-right corner.
-       * Sweeps down-left through the right half.
-       * Left tip ends around center (x ~520).
-       *
-       * Outer edge (top curve): wider arc, sweeps higher
-       * Inner edge (bottom curve): tighter, creates the crescent width
-       */}
-      <path
-        className="hs-crescent"
-        d={`
-          M 1520 -50
-          C 1380 30, 1180 160, 1000 260
-          C 820 360, 660 420, 520 430
+      <g transform="translate(180, 40) scale(0.9)">
+        {/*
+         * ── 1. MAIN CRESCENT (Darkest, Top) ──────────────────────
+         * Starts furthest left, thickest.
+         */}
+        <path
+          className="hs-crescent"
+          d={`
+            M 300 900
+            C 600 400, 1100 150, 1600 100
+            L 1600 300
+            C 1100 300, 700 550, 300 900
+            Z
+          `}
+          fill="url(#hs-grad-fill)"
+          filter="url(#hs-soft)"
+        />
 
-          C 650 390, 810 330, 980 240
-          C 1160 145, 1340 50, 1520 -10
-          Z
-        `}
-        fill="url(#hs-grad-fill)"
-        filter="url(#hs-soft)"
-      />
+        {/*
+         * ── 2. MID ARC ───────────────────────────────────────────
+         * Starts slightly further right, medium thickness.
+         */}
+        <path
+          className="hs-arc-mid"
+          d={`
+            M 500 900
+            C 800 600, 1200 340, 1600 340
+            L 1600 460
+            C 1200 430, 850 680, 500 900
+            Z
+          `}
+          fill="url(#hs-grad-mid)"
+          filter="url(#hs-soft)"
+        />
 
-      {/*
-       * ── 2. MID ARC ───────────────────────────────────────────
-       * Just inside/below the crescent.
-       */}
-      <path
-        className="hs-arc-mid"
-        d="M 1530 10
-           C 1370 70, 1180 190, 1010 300
-           C 830 410, 670 470, 500 480"
-        fill="none"
-        stroke="url(#hs-grad-mid)"
-        strokeWidth="6"
-        strokeLinecap="round"
-      />
-
-      {/*
-       * ── 3. THIN ARC ──────────────────────────────────────────
-       * Innermost, most subtle.
-       */}
-      <path
-        className="hs-arc-thin"
-        d="M 1540 40
-           C 1380 100, 1190 230, 1030 340
-           C 850 460, 690 520, 490 530"
-        fill="none"
-        stroke="url(#hs-grad-thin)"
-        strokeWidth="3"
-        strokeLinecap="round"
-      />
+        {/*
+         * ── 3. THIN ARC ──────────────────────────────────────────
+         * Starts furthest right, thinnest.
+         */}
+        <path
+          className="hs-arc-thin"
+          d={`
+            M 700 900
+            C 950 700, 1300 470, 1600 490
+            L 1600 560
+            C 1300 540, 1000 760, 700 900
+            Z
+          `}
+          fill="url(#hs-grad-thin)"
+          filter="url(#hs-soft)"
+        />
+      </g>
     </svg>
   );
 }
