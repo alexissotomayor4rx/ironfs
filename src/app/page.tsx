@@ -101,7 +101,7 @@ export default function Home() {
             <div className="hex-wrapper">
               <div className="hex-inner">
                 <Image
-                  src="/gallery_frame.png"
+                  src="/images/Structural_fab/IMG_3609.png"
                   alt="Structural Steel Fabrication"
                   fill
                   className="hex-bg"
@@ -118,7 +118,7 @@ export default function Home() {
             <div className="hex-wrapper">
               <div className="hex-inner">
                 <Image
-                  src="/gallery_stairs.png"
+                  src="/images/project_gallery/Balfour Beatty/224009-1250 Maryland Ave.jpeg"
                   alt="Engineering & Detailing"
                   fill
                   className="hex-bg"
@@ -134,7 +134,7 @@ export default function Home() {
             <div className="hex-wrapper">
               <div className="hex-inner">
                 <Image
-                  src="/hero_new.png"
+                  src="/images/project_gallery/Clark Construction/223011-Crystal Metro Entrance.jpeg"
                   alt="Steel Erection"
                   fill
                   className="hex-bg"
@@ -155,7 +155,7 @@ export default function Home() {
             <div className="hex-wrapper">
               <div className="hex-inner">
                 <Image
-                  src="/gallery_rails.png"
+                  src="/images/project_gallery/CBG Building/222013-North Moore.jpeg"
                   alt="Prefabricated Stairs & Rails"
                   fill
                   className="hex-bg"
@@ -171,7 +171,7 @@ export default function Home() {
             <div className="hex-wrapper">
               <div className="hex-inner">
                 <Image
-                  src="http://ironfs.com/images/galleries/thumbs/gallery5.png"
+                  src="/images/project_gallery/James Davis Construction/224001-Mars Arcadia.jpeg"
                   alt="Project Management"
                   fill
                   className="hex-bg"
@@ -239,7 +239,7 @@ export default function Home() {
             {/* Item 1 - Large */}
             <div className="masonry-item large">
               <Image
-                src="/images/project_gallery/224009-1250 Maryland Ave-2.jpeg"
+                src="/images/project_gallery/Balfour Beatty/224009-1250 Maryland Ave2.jpeg"
                 alt="1250 Maryland Ave – Structural Steel"
                 fill
                 style={{
@@ -286,7 +286,7 @@ export default function Home() {
             {/* Item 2 */}
             <div className="masonry-item">
               <Image
-                src="/images/project_gallery/224006-Inova.jpeg"
+                src="/images/project_gallery/Clark Construction/224006-Inova.jpeg"
                 alt="Inova – Steel Erection"
                 fill
                 style={{
@@ -333,7 +333,7 @@ export default function Home() {
             {/* Item 3 */}
             <div className="masonry-item">
               <Image
-                src="/images/project_gallery/222013-North Moore1.jpeg"
+                src="/images/project_gallery/CBG Building/222013-North Moore1.jpeg"
                 alt="North Moore – Steel Structure"
                 fill
                 style={{

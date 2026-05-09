@@ -55,7 +55,7 @@ export default function HeroSwoosh() {
         </linearGradient>
       </defs>
 
-      <g transform="translate(180, 40) scale(0.9)">
+      <g transform="translate(500, 300) scale(0.6)">
         {/*
          * ── 1. MAIN CRESCENT (Darkest, Top) ──────────────────────
          * Starts furthest left, thickest.
@@ -80,10 +80,10 @@ export default function HeroSwoosh() {
         <path
           className="hs-arc-mid"
           d={`
-            M 500 900
-            C 800 600, 1200 340, 1600 340
-            L 1600 460
-            C 1200 430, 850 680, 500 900
+            M 482 883
+            C 790 463, 1225 329, 1710 360
+            L 1649 579
+            C 1200 430, 769 588, 484 887
             Z
           `}
           fill="url(#hs-grad-mid)"
@@ -97,10 +97,10 @@ export default function HeroSwoosh() {
         <path
           className="hs-arc-thin"
           d={`
-            M 700 900
-            C 950 700, 1300 470, 1600 490
-            L 1600 560
-            C 1300 540, 1000 760, 700 900
+            M 801 732
+            C 1075 465, 1537 583, 1669 631
+            L 1499 930
+            C 1499 930, 1133 525, 805 730
             Z
           `}
           fill="url(#hs-grad-thin)"
